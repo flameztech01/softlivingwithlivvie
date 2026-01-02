@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight, FaStar, FaQuoteLeft, FaPlay, FaPause } from 'react-icons/fa'
 
 const Testimonials = () => {
+  // Use the same pattern as your BizzzedScreen.jsx - NO ./public/
   const testimonials = [
-    { id: 1, image: './1.jpg', name: 'Sarah M.', role: 'Student', rating: 5 },
-    { id: 2, image: './2.jpg', name: 'John D.', role: 'Freelancer', rating: 5 },
-    { id: 3, image: './3.jpg', name: 'Aisha B.', role: 'Entrepreneur', rating: 5 },
-    { id: 4, image: './4.jpg', name: 'Michael T.', role: 'Writer', rating: 5 },
-    { id: 5, image: './5.jpg', name: 'Chinwe O.', role: 'Student', rating: 5 },
-    { id: 6, image: './6.jpg', name: 'David K.', role: 'Content Creator', rating: 5 },
-    { id: 7, image: './7.jpg', name: 'Fatima A.', role: 'Marketer', rating: 5 },
+    { id: 1, image: '/now1.jpg', name: 'Sarah M.', role: 'Student', rating: 5 },
+    { id: 2, image: '/now2.jpg', name: 'John D.', role: 'Freelancer', rating: 5 },
+    { id: 3, image: '/3.jpg', name: 'Aisha B.', role: 'Entrepreneur', rating: 5 },
+    { id: 4, image: '/4.jpg', name: 'Michael T.', role: 'Writer', rating: 5 },
+    { id: 5, image: '/5.jpg', name: 'Chinwe O.', role: 'Student', rating: 5 },
+    { id: 6, image: '/6.jpg', name: 'David K.', role: 'Content Creator', rating: 5 },
+    { id: 7, image: '/7.jpg', name: 'Fatima A.', role: 'Marketer', rating: 5 },
   ]
 
   const [currentSlide, setCurrentSlide] = useState(0)
