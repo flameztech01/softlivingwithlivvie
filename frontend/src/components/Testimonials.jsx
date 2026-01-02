@@ -1,16 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight, FaStar, FaQuoteLeft, FaPlay, FaPause } from 'react-icons/fa'
+import now1 from '../assets/now1.jpg'
+import now2 from '../assets/now2.jpg'
+import img3 from '../assets/3.jpg'
+import img4 from '../assets/4.jpg'
+import img5 from '../assets/5.jpg'
+import img6 from '../assets/6.jpg'
+import img7 from '../assets/7.jpg'
 
 const Testimonials = () => {
-  // Use the same pattern as your BizzzedScreen.jsx - NO ./public/
+  // Function to get correct image path for all environments
+  const getImagePath = (imageName) => {
+    // Try both patterns - one will work
+    return imageName.startsWith('/') ? imageName : `/${imageName}`;
+  };
+
   const testimonials = [
-    { id: 1, image: '/now1.jpg', name: 'Sarah M.', role: 'Student', rating: 5 },
-    { id: 2, image: '/now2.jpg', name: 'John D.', role: 'Freelancer', rating: 5 },
-    { id: 3, image: '/3.jpg', name: 'Aisha B.', role: 'Entrepreneur', rating: 5 },
-    { id: 4, image: '/4.jpg', name: 'Michael T.', role: 'Writer', rating: 5 },
-    { id: 5, image: '/5.jpg', name: 'Chinwe O.', role: 'Student', rating: 5 },
-    { id: 6, image: '/6.jpg', name: 'David K.', role: 'Content Creator', rating: 5 },
-    { id: 7, image: '/7.jpg', name: 'Fatima A.', role: 'Marketer', rating: 5 },
+    { id: 1, image: now1, name: 'Sarah M.', role: 'Student', rating: 5 },
+    { id: 2, image: now2, name: 'John D.', role: 'Freelancer', rating: 5 },
+    { id: 3, image: img3, name: 'Aisha B.', role: 'Entrepreneur', rating: 5 },
+    { id: 4, image: img4, name: 'Michael T.', role: 'Writer', rating: 5 },
+    { id: 5, image: img5, name: 'Chinwe O.', role: 'Student', rating: 5 },
+    { id: 6, image: img6, name: 'David K.', role: 'Content Creator', rating: 5 },
+    { id: 7, image: img7, name: 'Fatima A.', role: 'Marketer', rating: 5 },
   ]
 
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -93,9 +105,18 @@ const Testimonials = () => {
             {/* Image Container */}
             <div className="aspect-[4/3] md:aspect-video relative">
               <img
-                src={testimonials[currentSlide].image}
+                src={getImagePath(testimonials[currentSlide].image)}
                 alt={`Testimonial from ${testimonials[currentSlide].name}`}
                 className="w-full h-full object-contain"
+                onError={(e) => {
+                  // If first path fails, try the alternative
+                  const currentSrc = e.target.src;
+                  if (currentSrc.includes('/now1.jpg')) {
+                    e.target.src = currentSrc.startsWith('/') 
+                      ? currentSrc.substring(1) 
+                      : `/${currentSrc}`;
+                  }
+                }}
               />
               
               {/* Overlay Gradient */}
@@ -129,9 +150,17 @@ const Testimonials = () => {
                 }`}
               >
                 <img
-                  src={testimonial.image}
+                  src={getImagePath(testimonial.image)}
                   alt={`Preview ${testimonial.name}`}
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const currentSrc = e.target.src;
+                    if (currentSrc.includes('.jpg')) {
+                      e.target.src = currentSrc.startsWith('/') 
+                        ? currentSrc.substring(1) 
+                        : `/${currentSrc}`;
+                    }
+                  }}
                 />
                 {/* Active indicator */}
                 {currentSlide === index && (
