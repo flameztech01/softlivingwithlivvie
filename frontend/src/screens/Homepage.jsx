@@ -7,6 +7,7 @@ import Features from "../components/Features.jsx";
 import AdsVideo from "../components/AdsVideo.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import Pricing from "../components/Pricing.jsx";
+import Footer from "../components/Footer.jsx";
 
 const Homepage = () => {
   return (
@@ -19,6 +20,7 @@ const Homepage = () => {
       <AdsVideo />
       <Testimonials />
       <Pricing />
+      <Footer />
     </div>
   );
 };
