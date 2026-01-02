@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight, FaStar, FaQuoteLeft, FaPlay, FaPause } from 'react-icons/fa'
-import now1 from '../assets/now1.jpg'
-import now2 from '../assets/now2.jpg'
-import img3 from '../assets/3.jpg'
-import img4 from '../assets/4.jpg'
-import img5 from '../assets/5.jpg'
-import img6 from '../assets/6.jpg'
-import img7 from '../assets/7.jpg'
+
 
 const Testimonials = () => {
   // Function to get correct image path for all environments
@@ -16,13 +10,13 @@ const Testimonials = () => {
   };
 
   const testimonials = [
-    { id: 1, image: now1, name: 'Sarah M.', role: 'Student', rating: 5 },
-    { id: 2, image: now2, name: 'John D.', role: 'Freelancer', rating: 5 },
-    { id: 3, image: img3, name: 'Aisha B.', role: 'Entrepreneur', rating: 5 },
-    { id: 4, image: img4, name: 'Michael T.', role: 'Writer', rating: 5 },
-    { id: 5, image: img5, name: 'Chinwe O.', role: 'Student', rating: 5 },
-    { id: 6, image: img6, name: 'David K.', role: 'Content Creator', rating: 5 },
-    { id: 7, image: img7, name: 'Fatima A.', role: 'Marketer', rating: 5 },
+    { id: 1, image: 'now1.JPG', name: 'Sarah M.', role: 'Student', rating: 5 },
+    { id: 2, image: 'now2.JPG', name: 'John D.', role: 'Freelancer', rating: 5 },
+    { id: 3, image: '3.JPG', name: 'Aisha B.', role: 'Entrepreneur', rating: 5 },
+    { id: 4, image: '4.JPG', name: 'Michael T.', role: 'Writer', rating: 5 },
+    { id: 5, image: '5.JPG', name: 'Chinwe O.', role: 'Student', rating: 5 },
+    { id: 6, image: '6.JPG', name: 'David K.', role: 'Content Creator', rating: 5 },
+    { id: 7, image: '7.JPG', name: 'Fatima A.', role: 'Marketer', rating: 5 },
   ]
 
   const [currentSlide, setCurrentSlide] = useState(0)
