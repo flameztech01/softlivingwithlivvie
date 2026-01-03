@@ -173,7 +173,7 @@ const Footer = () => {
               <p className="text-sm text-gray-400">Countries</p>
             </div>
             <div className="text-center">
-              <p className="text-3xl font-bold text-[#D4AF37]">98%</p>
+              <p className="text-3xl font-bold text-[#D4AF37]">100%</p>
               <p className="text-sm text-gray-400">Success Rate</p>
             </div>
             <div className="text-center">
