@@ -1,14 +1,10 @@
 import React from 'react'
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaTelegram, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
+import { FaTelegram, FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa'
 
 const Footer = () => {
-  const socialLinks = [
-    { icon: <FaFacebookF />, href: '#', label: 'Facebook' },
-    { icon: <FaTwitter />, href: '#', label: 'Twitter' },
-    { icon: <FaInstagram />, href: '#', label: 'Instagram' },
-    { icon: <FaLinkedinIn />, href: '#', label: 'LinkedIn' },
-    { icon: <FaYoutube />, href: '#', label: 'YouTube' },
-    { icon: <FaTelegram />, href: '#', label: 'Telegram' },
+  const telegramLinks = [
+    { icon: <FaTelegram />, href: '#', label: 'Telegram Channel' },
+    { icon: <FaTelegram />, href: '#', label: 'Telegram Group' },
   ]
 
   const quickLinks = [
@@ -46,20 +42,27 @@ const Footer = () => {
               Empowering individuals worldwide to achieve financial freedom through AI writing and legitimate income streams.
             </p>
             
-            {/* Social Links */}
-            <div className="flex gap-3 mb-6">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-10 h-10 bg-gray-900 hover:bg-[#D4AF37] rounded-full flex items-center justify-center transition-colors duration-300 group"
-                >
-                  <span className="text-gray-400 group-hover:text-black">
-                    {social.icon}
-                  </span>
-                </a>
-              ))}
+            {/* Telegram Links Only */}
+            <div className="mb-6">
+              <h4 className="text-lg font-bold mb-4 text-[#D4AF37]">Join Our Telegram</h4>
+              <div className="flex gap-3">
+                {telegramLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="w-10 h-10 bg-gray-900 hover:bg-[#0088cc] rounded-full flex items-center justify-center transition-colors duration-300 group"
+                    title={social.label}
+                  >
+                    <span className="text-gray-400 group-hover:text-white">
+                      {social.icon}
+                    </span>
+                  </a>
+                ))}
+              </div>
+              <p className="text-sm text-gray-400 mt-2">
+                Get updates and connect with our community
+              </p>
             </div>
           </div>
 
@@ -122,6 +125,9 @@ const Footer = () => {
                 Subscribe
               </button>
             </form>
+            <p className="text-xs text-gray-500 mt-2">
+              Or join our Telegram for instant updates
+            </p>
           </div>
         </div>
 
@@ -182,6 +188,9 @@ const Footer = () => {
             </div>
             <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
               <span className="text-sm text-gray-300">⭐ 5-Star Reviews</span>
+            </div>
+            <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
+              <span className="text-sm text-gray-300">📱 Active Telegram Community</span>
             </div>
           </div>
         </div>

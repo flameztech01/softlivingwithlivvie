@@ -1,8 +1,22 @@
 import React from 'react'
 
 const Hero = () => {
+  const scrollToTestimonials = () => {
+    const testimonialsSection = document.getElementById('testimonials')
+    if (testimonialsSection) {
+      const headerHeight = 64 // Adjust this based on your header height
+      const elementPosition = testimonialsSection.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
+
   return (
-    <section className="bg-black text-white min-h-screen flex items-center">
+    <section id="home" className="bg-black text-white min-h-screen flex items-center pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
           
@@ -28,7 +42,10 @@ const Hero = () => {
             </div>
             
             <div className="pt-4">
-              <button className="bg-[#D4AF37] text-black font-bold px-8 py-3 rounded-md hover:bg-[#B8860B] transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={scrollToTestimonials}
+                className="bg-[#D4AF37] text-black font-bold px-8 py-3 rounded-md hover:bg-[#B8860B] transition-all duration-300 transform hover:scale-105"
+              >
                 View Testimonials
               </button>
             </div>
@@ -65,11 +82,15 @@ const Hero = () => {
         
         {/* Scroll indicator */}
         <div className="mt-12 md:mt-20 flex justify-center">
-          <div className="animate-bounce">
+          <button 
+            onClick={scrollToTestimonials}
+            className="animate-bounce cursor-pointer"
+            aria-label="Scroll to testimonials"
+          >
             <svg className="w-6 h-6 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </section>

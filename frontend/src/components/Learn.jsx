@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaCheckCircle, FaPenFancy, FaRobot, FaChartLine, FaLightbulb, FaWallet, FaStar } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Learn = () => {
   const learningPoints = [
@@ -134,9 +135,9 @@ const Learn = () => {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <button className="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black font-bold px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-[#D4AF37]/30 transition-all duration-300 transform hover:scale-105 text-lg md:text-xl">
+          <Link to="https://t.me/TheyluvOlivia" target="_blank" rel='noopener noreferrer' className="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black font-bold px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-[#D4AF37]/30 transition-all duration-300 transform hover:scale-105 text-lg md:text-xl">
             Start Learning Today →
-          </button>
+          </Link>
           <p className="mt-4 text-gray-400 text-sm">
             Join 8,000+ students who've transformed their income with AI writing
           </p>

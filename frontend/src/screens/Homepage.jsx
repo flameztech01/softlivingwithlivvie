@@ -13,14 +13,30 @@ const Homepage = () => {
   return (
     <div>
       <Header />
-      <Hero />
-      <Hero2 />
-      <Learn />
-      <Features />
-      <AdsVideo />
-      <Testimonials />
-      <Pricing />
-      <Footer />
+      <section id="home">
+        <Hero />
+      </section>
+      <section id="about">
+        <Hero2 />
+      </section>
+      <section id="learn">
+        <Learn />
+      </section>
+      <section id="features">
+        <Features />
+      </section>
+      <section id="ads-video">
+        <AdsVideo />
+      </section>
+      <section id="testimonials">
+        <Testimonials />
+      </section>
+      <section id="pricing">
+        <Pricing />
+      </section>
+      <section id="contact">
+        <Footer />
+      </section>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaChevronLeft, FaChevronRight, FaStar, FaQuoteLeft, FaPlay, FaPause } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 
 const Testimonials = () => {
@@ -45,7 +46,7 @@ const Testimonials = () => {
   }, [isAutoPlaying, currentSlide])
 
   return (
-    <section className="bg-gradient-to-b from-black to-gray-900 text-white py-16 md:py-24">
+    <section className="bg-gradient-to-b from-black to-gray-900 text-white py-16 md:py-24" id='testimonials'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -202,9 +203,9 @@ const Testimonials = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <button className="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black font-bold px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-[#D4AF37]/30 transition-all duration-300 transform hover:scale-105 text-lg">
+          <Link to="https://t.me/TheyluvOlivia" target="_blank" rel='noopener noreferrer' className="bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-black font-bold px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-[#D4AF37]/30 transition-all duration-300 transform hover:scale-105 text-lg">
             Join Successful Students →
-          </button>
+          </Link>
           <p className="mt-4 text-gray-400 text-sm">
             Start your journey today and add your success story
           </p>

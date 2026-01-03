@@ -108,8 +108,9 @@ const Pricing = () => {
 
                 {/* Enroll Button */}
                 <Link 
-                  href={`https://t.me/${plan.telegramNumber}`}
+                to="https://t.me/TheyluvOlivia"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className={`block w-full text-center font-bold py-4 rounded-lg transition-all duration-300 ${
                     plan.highlighted
                       ? 'bg-[#D4AF37] text-black hover:bg-[#B8860B]'
@@ -168,8 +169,9 @@ const Pricing = () => {
               <div className="space-y-6">
                 {/* Telegram Link */}
                 <Link 
-                  href="https://t.me/07017696460"
+                  to="https://t.me/TheyluvOlivia"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-xl border border-gray-800 hover:border-[#D4AF37] hover:bg-gray-800/50 transition-all duration-300 group"
                 >
                   <div className="p-3 bg-[#0088CC] rounded-lg">

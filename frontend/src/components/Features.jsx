@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaVideo, FaFilePdf, FaUsers, FaComments, FaCalendarAlt, FaInfinity, FaUserGraduate, FaUserTie, FaUserMd, FaBriefcase, FaUserFriends } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
 
 const Features = () => {
   const courseFeatures = [
@@ -130,9 +131,9 @@ const Features = () => {
             <div className="bg-gradient-to-br from-gray-900 to-black border border-[#D4AF37]/30 rounded-2xl p-6 text-center">
               <h4 className="text-xl font-bold mb-3">Ready to Transform Your Income?</h4>
               <p className="text-gray-300 mb-6">Join 8,000+ successful students today</p>
-              <button className="bg-[#D4AF37] text-black font-bold px-8 py-3 rounded-lg hover:bg-[#B8860B] transition-all duration-300 w-full">
+              <Link to="https://t.me/TheyluvOlivia" target="_blank" rel='noopener noreferrer' className="bg-[#D4AF37] text-black font-bold px-8 py-3 rounded-lg hover:bg-[#B8860B] transition-all duration-300 w-full">
                 Enroll Now - Limited Spots
-              </button>
+              </Link>
             </div>
           </div>
 
