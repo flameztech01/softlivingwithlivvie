@@ -31,7 +31,7 @@ const Hero = () => {
             
             <div className="space-y-4">
               <p className="text-xl text-gray-300">
-                Mostly known as <span className="text-[#D4AF37] font-semibold">coach Olivia</span>. I'm a financial coach and entrepreneur.
+                Mostly known as <span className="text-[#D4AF37] font-semibold">Coach Olivia</span>. I'm a financial coach and entrepreneur.
               </p>
               
               <div className="bg-gray-900 p-4 rounded-lg border-l-4 border-[#D4AF37]">
