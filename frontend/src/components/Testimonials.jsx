@@ -188,7 +188,7 @@ const Testimonials = () => {
             <p className="text-sm text-gray-300">Students</p>
           </div>
           <div className="bg-gray-900/50 p-4 rounded-xl text-center border border-gray-800">
-            <p className="text-3xl font-bold text-[#D4AF37]">97%</p>
+            <p className="text-3xl font-bold text-[#D4AF37]">100%</p>
             <p className="text-sm text-gray-300">Success Rate</p>
           </div>
           <div className="bg-gray-900/50 p-4 rounded-xl text-center border border-gray-800">

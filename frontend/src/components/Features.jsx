@@ -186,7 +186,7 @@ const Features = () => {
                     <p className="text-sm text-gray-300">Students</p>
                   </div>
                   <div className="text-center p-3 bg-black rounded-lg">
-                    <p className="text-3xl font-bold text-[#D4AF37]">98%</p>
+                    <p className="text-3xl font-bold text-[#D4AF37]">100%</p>
                     <p className="text-sm text-gray-300">Success Rate</p>
                   </div>
                   <div className="text-center p-3 bg-black rounded-lg">
