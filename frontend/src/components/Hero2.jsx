@@ -52,7 +52,7 @@ const Hero2 = () => {
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-4">
             <span className="bg-[#D4AF37] text-black text-sm font-semibold px-4 py-2 rounded-full">
-              NEW BEGINNERS COURSE
+              NEW BEGINNERS MENTORSHIP
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
@@ -188,7 +188,7 @@ const Hero2 = () => {
             <div className="w-8 h-0.5 bg-[#D4AF37]"></div>
           </div>
           <p className="text-xl italic text-gray-300 max-w-3xl mx-auto">
-            "Thanks to Coach Olivia's AI course, I went from zero to earning
+            "Thanks to Coach Olivia's AI mentorship, I went from zero to earning
             $2,500 monthly writing with AI tools. Life-changing!"
           </p>
           <p className="mt-4 text-[#D4AF37]">— Sarah T., Course Graduate</p>

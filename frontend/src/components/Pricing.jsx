@@ -211,19 +211,6 @@ const Pricing = () => {
                 </p>
               </div>
             </div>
-
-            {/* Guarantee */}
-            <div className="text-center p-6 border border-gray-800 rounded-2xl">
-              <div className="inline-flex items-center gap-2 mb-3">
-                <div className="w-6 h-6 bg-[#D4AF37] rounded-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-black rounded-full"></div>
-                </div>
-                <span className="font-bold">Money-Back Guarantee</span>
-              </div>
-              <p className="text-gray-300">
-                30-day satisfaction guarantee. If not satisfied, get your money back.
-              </p>
-            </div>
           </div>
         </div>
       </div>

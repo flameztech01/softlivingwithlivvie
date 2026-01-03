@@ -196,7 +196,7 @@ const Testimonials = () => {
             <p className="text-sm text-gray-300">Countries</p>
           </div>
           <div className="bg-gray-900/50 p-4 rounded-xl text-center border border-gray-800">
-            <p className="text-3xl font-bold text-[#D4AF37]">4.9</p>
+            <p className="text-3xl font-bold text-[#D4AF37]">5.0</p>
             <p className="text-sm text-gray-300">Average Rating</p>
           </div>
         </div>
