@@ -220,7 +220,7 @@ const Footer = () => {
               <span className="text-sm text-gray-300">🚀 Instant Access</span>
             </div>
             <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
-              <span className="text-sm text-gray-300">✅ 30-Day Guarantee</span>
+              <span className="text-sm text-gray-300">✅ Guarantee Earnings</span>
             </div>
           </div>
         </div>
