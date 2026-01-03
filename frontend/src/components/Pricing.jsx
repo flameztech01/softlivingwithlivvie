@@ -1,8 +1,9 @@
 import React from 'react'
-import { FaGem, FaCrown, FaUsers, FaChartLine, FaPaperPlane, FaComment, FaWhatsapp, FaTelegram } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+import { FaGem, FaCrown, FaUsers, FaChartLine, FaPaperPlane, FaTelegram } from 'react-icons/fa'
 
 const Pricing = () => {
+  const telegramLink = 'https://t.me/TheyluvOlivia'
+  
   const pricingPlans = [
     {
       icon: <FaGem className="text-3xl" />,
@@ -16,8 +17,7 @@ const Pricing = () => {
         "Monthly live classes",
         "Lifetime access"
       ],
-      highlighted: false,
-      telegramNumber: "07017696460"
+      highlighted: false
     },
     {
       icon: <FaCrown className="text-3xl" />,
@@ -32,13 +32,12 @@ const Pricing = () => {
         "Career guidance sessions",
         "Portfolio review"
       ],
-      highlighted: true,
-      telegramNumber: "07017696460"
+      highlighted: true
     }
   ]
 
   return (
-    <section className="bg-black text-white py-16 md:py-24">
+    <section className="bg-black text-white py-16 md:py-24" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -107,8 +106,8 @@ const Pricing = () => {
                 </div>
 
                 {/* Enroll Button */}
-                <Link 
-                to="https://t.me/TheyluvOlivia"
+                <a 
+                  href={telegramLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`block w-full text-center font-bold py-4 rounded-lg transition-all duration-300 ${
@@ -118,7 +117,7 @@ const Pricing = () => {
                   }`}
                 >
                   Enroll Now on Telegram
-                </Link>
+                </a>
               </div>
             ))}
           </div>
@@ -160,50 +159,54 @@ const Pricing = () => {
               </div>
             </div>
 
-            {/* Contact Card */}
+            {/* Telegram Only Contact Card */}
             <div className="bg-gradient-to-br from-black to-gray-900 border border-[#D4AF37]/30 rounded-2xl p-6">
               <h3 className="text-2xl font-bold mb-6 text-center">
-                TO <span className="text-[#D4AF37]">ENROLL</span>
+                ENROLL VIA <span className="text-[#D4AF37]">TELEGRAM</span>
               </h3>
               
               <div className="space-y-6">
-                {/* Telegram Link */}
-                <Link 
-                  to="https://t.me/TheyluvOlivia"
+                {/* Main Telegram Channel */}
+                <a 
+                  href={telegramLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-xl border border-gray-800 hover:border-[#D4AF37] hover:bg-gray-800/50 transition-all duration-300 group"
                 >
-                  <div className="p-3 bg-[#0088CC] rounded-lg">
-                    <FaPaperPlane className="text-xl text-white" />
+                  <div className="p-3 bg-[#D4AF37] rounded-lg">
+                    <FaPaperPlane className="text-xl text-black" />
                   </div>
                   <div className="flex-grow">
-                    <p className="font-bold mb-1">Text on Telegram</p>
-                    <p className="text-gray-300">07017696460</p>
+                    <p className="font-bold mb-1">Official Telegram Channel</p>
+                    <p className="text-gray-300">@TheyluvOlivia</p>
                   </div>
-                  <FaTelegram className="text-[#0088CC] text-xl group-hover:scale-110 transition-transform" />
-                </Link>
+                  <FaTelegram className="text-[#D4AF37] text-xl group-hover:scale-110 transition-transform" />
+                </a>
 
-                {/* WhatsApp Link */}
-                <Link 
-                  href="https://wa.me/2347017696460"
+                {/* Telegram Support */}
+                <a 
+                  href={telegramLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-4 p-4 bg-gray-900/50 rounded-xl border border-gray-800 hover:border-[#D4AF37] hover:bg-gray-800/50 transition-all duration-300 group"
                 >
-                  <div className="p-3 bg-[#25D366] rounded-lg">
-                    <FaComment className="text-xl text-white" />
+                  <div className="p-3 bg-[#D4AF37] rounded-lg">
+                    <FaTelegram className="text-xl text-black" />
                   </div>
                   <div className="flex-grow">
-                    <p className="font-bold mb-1">DM for enquiries</p>
-                    <p className="text-gray-300">Chat on WhatsApp</p>
+                    <p className="font-bold mb-1">Direct Message for Support</p>
+                    <p className="text-gray-300">Available 24/7 on Telegram</p>
                   </div>
-                  <FaWhatsapp className="text-[#25D366] text-xl group-hover:scale-110 transition-transform" />
-                </Link>
+                  <FaTelegram className="text-[#D4AF37] text-xl group-hover:scale-110 transition-transform" />
+                </a>
               </div>
 
               {/* Note */}
               <div className="mt-6 p-4 bg-black/50 rounded-xl border border-gray-800">
                 <p className="text-sm text-gray-300 text-center">
+                  ⚡ All communication happens on Telegram only
+                </p>
+                <p className="text-sm text-gray-400 text-center mt-2">
                   Spots are limited. Enroll today to secure your position!
                 </p>
               </div>

@@ -1,26 +1,53 @@
 import React from 'react'
-import { FaTelegram, FaWhatsapp, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { FaTelegram } from 'react-icons/fa'
 
 const Footer = () => {
-  const telegramLinks = [
-    { icon: <FaTelegram />, href: '#', label: 'Telegram Channel' },
-    { icon: <FaTelegram />, href: '#', label: 'Telegram Group' },
+  const telegramLink = 'https://t.me/TheyluvOlivia'
+  
+  // Quick Links matching the header sections
+  const navSections = [
+    { id: 'home', label: 'Home' },
+    { id: 'about', label: 'About' },
+    { id: 'learn', label: 'Learn' },
+    { id: 'features', label: 'Features' },
+    { id: 'testimonials', label: 'Testimonials' },
+    { id: 'pricing', label: 'Pricing' },
+    { id: 'contact', label: 'Contact' }
   ]
 
-  const quickLinks = [
-    { label: 'Home', href: '#' },
-    { label: 'About', href: '#' },
-    { label: 'Course Features', href: '#' },
-    { label: 'What You\'ll Learn', href: '#' },
-    { label: 'Testimonials', href: '#' },
-    { label: 'Pricing', href: '#' },
-  ]
+  const handleScroll = (id) => {
+    const element = document.getElementById(id)
+    if (element) {
+      const headerHeight = 64 // Height of your fixed header
+      const elementPosition = element.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerHeight
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+    }
+  }
 
-  const contactInfo = [
-    { icon: <FaPhone />, text: '+234 701 769 6460', href: 'tel:+2347017696460' },
-    { icon: <FaWhatsapp />, text: 'Chat on WhatsApp', href: 'https://wa.me/2347017696460' },
-    { icon: <FaTelegram />, text: 'Message on Telegram', href: 'https://t.me/07017696460' },
-    { icon: <FaEnvelope />, text: 'hello@softlivingwithlivvie.com', href: 'mailto:hello@softlivingwithlivvie.com' },
+  const telegramChannels = [
+    { 
+      icon: <FaTelegram />, 
+      href: telegramLink, 
+      label: 'Official Channel', 
+      description: 'Get daily AI writing tips & updates' 
+    },
+    { 
+      icon: <FaTelegram />, 
+      href: telegramLink, 
+      label: 'Community Group', 
+      description: 'Join our growing community' 
+    },
+    { 
+      icon: <FaTelegram />, 
+      href: telegramLink, 
+      label: 'Support Center', 
+      description: 'Get instant support & help' 
+    },
   ]
 
   return (
@@ -38,96 +65,99 @@ const Footer = () => {
                 Soft Living <span className="text-[#D4AF37]">with Livvie</span>
               </h3>
             </div>
-            <p className="text-gray-400 mb-6">
+            <p className="text-gray-400 mb-8">
               Empowering individuals worldwide to achieve financial freedom through AI writing and legitimate income streams.
             </p>
             
-            {/* Telegram Links Only */}
+            {/* Telegram Links */}
             <div className="mb-6">
-              <h4 className="text-lg font-bold mb-4 text-[#D4AF37]">Join Our Telegram</h4>
-              <div className="flex gap-3">
-                {telegramLinks.map((social, index) => (
+              <h4 className="text-lg font-bold mb-6 text-[#D4AF37]">Join Our Telegram</h4>
+              <div className="space-y-4">
+                {telegramChannels.map((channel, index) => (
                   <a
                     key={index}
-                    href={social.href}
-                    aria-label={social.label}
-                    className="w-10 h-10 bg-gray-900 hover:bg-[#0088cc] rounded-full flex items-center justify-center transition-colors duration-300 group"
-                    title={social.label}
+                    href={channel.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={channel.label}
+                    className="flex items-start gap-3 p-3 bg-gray-900 hover:bg-gray-800 rounded-lg transition-all duration-300 group border border-gray-800 hover:border-[#D4AF37]"
                   >
-                    <span className="text-gray-400 group-hover:text-white">
-                      {social.icon}
-                    </span>
+                    <div className="w-10 h-10 bg-gray-800 group-hover:bg-[#D4AF37] rounded-full flex items-center justify-center transition-colors duration-300">
+                      <FaTelegram className="text-gray-400 group-hover:text-black text-lg" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-white group-hover:text-[#D4AF37] transition-colors">{channel.label}</p>
+                      <p className="text-sm text-gray-400">{channel.description}</p>
+                    </div>
                   </a>
                 ))}
               </div>
-              <p className="text-sm text-gray-400 mt-2">
-                Get updates and connect with our community
-              </p>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links - matching header sections */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#D4AF37]">Quick Links</h4>
             <ul className="space-y-3">
-              {quickLinks.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"
+              {navSections.map((section) => (
+                <li key={section.id}>
+                  <button
+                    onClick={() => handleScroll(section.id)}
+                    className="w-full text-left text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <div className="w-1.5 h-1.5 bg-[#D4AF37] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    {link.label}
-                  </a>
+                    {section.label}
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 text-[#D4AF37]">Contact Info</h4>
-            <ul className="space-y-4">
-              {contactInfo.map((contact, index) => (
-                <li key={index}>
-                  <a
-                    href={contact.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-3 text-gray-400 hover:text-[#D4AF37] transition-colors duration-300 group"
-                  >
-                    <span className="mt-1 text-[#D4AF37] group-hover:scale-110 transition-transform">
-                      {contact.icon}
-                    </span>
-                    <span>{contact.text}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Newsletter */}
-          <div>
-            <h4 className="text-lg font-bold mb-6 text-[#D4AF37]">Stay Updated</h4>
-            <p className="text-gray-400 mb-4">
-              Subscribe to get tips and updates on AI writing opportunities.
-            </p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-full px-4 py-3 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:border-[#D4AF37] transition-colors"
-              />
-              <button
-                type="submit"
-                className="w-full bg-[#D4AF37] text-black font-bold py-3 rounded-lg hover:bg-[#B8860B] transition-colors duration-300"
+          {/* Telegram Exclusive Section */}
+          <div className="lg:col-span-2">
+            <div className="bg-gradient-to-r from-gray-900 to-black p-6 rounded-xl border border-gray-800">
+              <h4 className="text-2xl font-bold mb-4 text-white">Everything Happens on Telegram</h4>
+              <p className="text-gray-300 mb-6">
+                All our communication, community interaction, support, and content delivery happens exclusively on Telegram. 
+                Join our channel to access everything in one place!
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div className="text-center p-4 bg-gray-900 rounded-lg">
+                  <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <FaTelegram className="text-black text-xl" />
+                  </div>
+                  <h5 className="font-bold text-white mb-1">Daily Content</h5>
+                  <p className="text-sm text-gray-400">AI writing tips & strategies</p>
+                </div>
+                
+                <div className="text-center p-4 bg-gray-900 rounded-lg">
+                  <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <FaTelegram className="text-black text-xl" />
+                  </div>
+                  <h5 className="font-bold text-white mb-1">Community</h5>
+                  <p className="text-sm text-gray-400">Network & collaborate</p>
+                </div>
+                
+                <div className="text-center p-4 bg-gray-900 rounded-lg">
+                  <div className="w-12 h-12 bg-[#D4AF37] rounded-full flex items-center justify-center mx-auto mb-3">
+                    <FaTelegram className="text-black text-xl" />
+                  </div>
+                  <h5 className="font-bold text-white mb-1">Support</h5>
+                  <p className="text-sm text-gray-400">Direct access to help</p>
+                </div>
+              </div>
+              
+              <a
+                href={telegramLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#B8860B] text-black font-bold py-3 px-6 rounded-lg transition-colors duration-300"
               >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-xs text-gray-500 mt-2">
-              Or join our Telegram for instant updates
-            </p>
+                <FaTelegram className="text-xl" />
+                Join Our Telegram Channel
+              </a>
+            </div>
           </div>
         </div>
 
@@ -148,7 +178,7 @@ const Footer = () => {
             </div>
             <div className="text-center">
               <p className="text-3xl font-bold text-[#D4AF37]">5K+</p>
-              <p className="text-sm text-gray-400">Testimonials</p>
+              <p className="text-sm text-gray-400">Active Members</p>
             </div>
           </div>
         </div>
@@ -181,16 +211,16 @@ const Footer = () => {
           {/* Trust Badges */}
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
-              <span className="text-sm text-gray-300">✅ 30-Day Money Back</span>
+              <span className="text-sm text-gray-300">📱 Telegram Exclusive Platform</span>
             </div>
             <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
-              <span className="text-sm text-gray-300">🔒 Secure Payment</span>
+              <span className="text-sm text-gray-300">⭐ 5-Star Community</span>
             </div>
             <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
-              <span className="text-sm text-gray-300">⭐ 5-Star Reviews</span>
+              <span className="text-sm text-gray-300">🚀 Instant Access</span>
             </div>
             <div className="px-4 py-2 bg-gray-800 rounded-lg border border-gray-700">
-              <span className="text-sm text-gray-300">📱 Active Telegram Community</span>
+              <span className="text-sm text-gray-300">✅ 30-Day Guarantee</span>
             </div>
           </div>
         </div>
@@ -198,7 +228,7 @@ const Footer = () => {
 
       {/* Back to Top */}
       <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => handleScroll('home')}
         className="fixed bottom-6 right-6 w-12 h-12 bg-[#D4AF37] text-black rounded-full flex items-center justify-center shadow-lg hover:bg-[#B8860B] transition-colors duration-300 z-50"
         aria-label="Back to top"
       >
