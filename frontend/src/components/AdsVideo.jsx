@@ -142,7 +142,7 @@ const AdsVideo = () => {
           <div className="relative aspect-video bg-black">
             <video
               ref={videoRef}
-              src="/ads.MOV"
+              src="/myvideo.mp4"
               className="w-full h-full object-contain"
               onTimeUpdate={handleTimeUpdate}
               onLoadedMetadata={handleLoadedMetadata}
