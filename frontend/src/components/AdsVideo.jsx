@@ -154,8 +154,8 @@ const AdsVideo = () => {
               playsInline
               webkit-playsinline="true"
             >
-              <source src="/ads.MOV" type="video/mp4" />
-              <source src="/ads.MOV" type="video/quicktime" />
+              <source src="/myvideo.mp4" type="video/mp4" />
+              <source src="/myvideo.mp4" type="video/quicktime" />
               Your browser does not support the video tag.
             </video>
             
