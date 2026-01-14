@@ -8,7 +8,7 @@ const Pricing = () => {
     {
       icon: <FaGem className="text-3xl" />,
       title: "Regular Classes",
-      price: "₦35,000",
+      price: "₦25,000",
       features: [
         "Access to all recorded lessons",
         "PDF materials & templates",
